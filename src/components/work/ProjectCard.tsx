@@ -16,7 +16,6 @@ export default function ProjectCard({ title, client, image, href }: Props) {
           <img
             src={image}
             alt={client}
-            fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
         </div>

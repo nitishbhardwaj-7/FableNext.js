@@ -28,8 +28,6 @@ export default function FeaturedProject() {
             <img
               src="https://cms.fableco.uk/wp-content/uploads/2025/10/FableCo-Header-Image-Book-scaled.jpg"
               alt="The Housing Finance Corporation"
-              fill
-              priority
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
