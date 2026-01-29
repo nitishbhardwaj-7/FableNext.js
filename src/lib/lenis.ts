@@ -12,7 +12,6 @@ export function initLenis() {
   if (lenis) return lenis
 
   lenis = new Lenis({
-    smooth: true,
     lerp: 0.08,
   })
 
