@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header"
 import MuseHero from "@/components/muse/MuseHero"
 import FeaturedArticle from "@/components/muse/FeaturedArticle"
 import ArticlesGrid from "@/components/muse/ArticlesGrid"
+import Footer from "@/components/sections/Footer"
 
 export default function MusePage() {
   return (
@@ -18,6 +19,8 @@ export default function MusePage() {
       </div>
 
       <ArticlesGrid />
+
+      <Footer/>
     </main>
   )
 }

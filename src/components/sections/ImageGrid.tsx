@@ -2,17 +2,21 @@ import Link from "next/link"
 
 export default function ImageGrid() {
   return (
-    <section className="bg-[#1c1c1c] text-white py-18 my-25 border-t border-white mx-10">
+    <section className="bg-[#1c1c1c] text-white 
+py-12 md:py-18 
+my-16 md:my-25 
+border-t border-white 
+mx-4 md:mx-10">
       <div className="">
 
         {/* Intro */}
         <div className="flex flex-col">
-          <div className="flex gap-95">
-            <h2 className="uppercase w-45">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-95">
+            <h2 className="uppercase w-full md:w-45">
               Our Studio
             </h2>
 
-            <p className="text-2xl font-light">
+            <p className="text-lg sm:text-xl md:text-2xl font-light">
               The dynamic Fable collective brings together far more than just
               great talent. Thriving in our <br/> energetic, collaborative
               environment – we believe that this yields the high quality &
@@ -34,7 +38,7 @@ export default function ImageGrid() {
           </div>
 
           {/* Images */}
-          <div className="flex-1 mt-30">
+          <div className="flex-1 mt-16 md:mt-30">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
 
               {/* Left image */}

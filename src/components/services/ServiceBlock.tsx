@@ -6,8 +6,23 @@ export default function ServiceBlock({ service }: any) {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="service-panel relative bg-[#1c1c1c] border-t border-white/20 pt-20">
-      <div className="flex justify-between">
+    <section className="service-panel relative h-screen overflow-hidden border-t border-white/20 pt-20 min-h-[80vh]">
+      
+      
+      <div
+        className="
+          absolute inset-0 -z-10 w-full
+          bg-[url('/images/services.jpg')]
+          bg-cover bg-center
+          animate-slow-pan
+        "
+      />
+
+      
+      <div className="absolute inset-0 bg-black/35 -z-10" />
+
+      
+      <div className="relative z-10 flex justify-between px-10">
         <h2 className="text-4xl w-70 font-light mb-6">
           {service.title}
         </h2>

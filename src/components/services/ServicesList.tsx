@@ -21,10 +21,10 @@ export default function ServicesList() {
     panels.forEach((panel, i) => {
       const nextPanel = panels[i + 1]
 
-      // z-index order: later panels are on top
+      
       panel.style.zIndex =  `${i + 1}`
 
-      // ❌ last panel should NOT pin
+      
       if (!nextPanel) return
 
       ScrollTrigger.create({
@@ -46,7 +46,7 @@ export default function ServicesList() {
   }, [])
 
   return (
-    <section ref={containerRef} className="px-10 pb-40">
+    <section ref={containerRef} className="pb-40 px-10">
       <div className="space-y-32">
         {services.map((service, i) => (
           <ServiceBlock key={i} service={service} />

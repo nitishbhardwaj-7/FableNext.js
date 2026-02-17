@@ -20,54 +20,63 @@ export default function Expertise() {
   const itemsRef = useRef<HTMLDivElement[]>([])
 
   useLayoutEffect(() => {
-    const section = sectionRef.current
-    if (!section) return
+  const section = sectionRef.current
+  if (!section) return
 
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: "+=300%",          // controls total duration
-          scrub: true,
-          pin: true,
-          pinSpacing: true,
-          invalidateOnRefresh: true,
-          // markers: true,
-        },
-      })
+  const mm = gsap.matchMedia()
 
-      itemsRef.current.forEach((item) => {
-        tl.fromTo(
-          item,
-          { y: 600},
-          { y: 0, ease: "power2.out" },
-          "<50%" // spacing between items
-        )
-      })
-    }, section)
+  mm.add("(min-width: 768px)", () => {
+    const tl = gsap.timeline({
+      
+      scrollTrigger: {
+        trigger: section,
+        start: "top top",
+        end: "+=300%",
+        scrub: true,
+        pin: true,
+        pinSpacing: true,
+        invalidateOnRefresh: true,
+      },
+      
+    })
 
-    return () => ctx.revert()
-  }, [])
+    itemsRef.current.forEach((item) => {
+      tl.fromTo(
+        item,
+        { y: 600 },
+        { y: 0, ease: "power2.out" },
+        "<50%"
+      )
+    })
+  })
+
+  return () => mm.revert()
+}, [])
 
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#1c1c1c] text-white mt-40 border-t border-white mx-10"
+      className="relative bg-[#1c1c1c] text-white 
+mt-20 md:mt-40 
+border-t border-white 
+mx-4 md:mx-10"
     >
       {/* Heading */}
-      <div className=" py-20 flex gap-120 font-light">
+      <div className="py-12 md:py-20 
+flex flex-col md:flex-row 
+gap-8 md:gap-120 
+font-light">
         <h2 className="uppercase tracking-wide">Expertise</h2>
         <p className="text-2xl max-w-3xl">
           Grounded in deep research and sharp strategy, we define clear paths forward to uncover growth - where every creative move is strategically led. We craft purposeful identities and seamless brand experiences across digital, web, and marketing - made for impact today, and momentum tomorrow.
-        <button className="mt-10 text-lg">Our Services</button>
+        <button className="mt-10 text-lg hidden">Our Services</button>
         </p>
       </div>
       
 
       {/* SIDE-BY-SIDE STACK */}
       <div className="relative">
-        <div className="grid grid-flow-col auto-cols-max gap-20">
+        <div className="grid grid-cols-1 md:grid-flow-col md:auto-cols-max gap-12 md:gap-20">
           {ITEMS.map((item, i) => (
             <div
               key={item.title}

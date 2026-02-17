@@ -30,7 +30,7 @@ export default function HomePage() {
         end: "+=100%",
         scrub: true,
         pin: true,
-        pinSpacing: false, // 👈 THIS IS CRITICAL
+        pinSpacing: false,
       },
     })
   })
@@ -47,15 +47,25 @@ export default function HomePage() {
         </header>
 
         <section className="relative min-h-[70vh]">
-          <img src="https://cms.fableco.uk/wp-content/uploads/2025/09/FableCo-Header-Windmills.jpg"
-            alt="Windmills hero"
-            className="absolute inset-0 h-full w-full object-cover" />
+           {/* Mobile Image */}
+  <img
+    src="https://cms.fableco.uk/wp-content/uploads/2025/09/FableCo-Mobile-Header-Windmill-1.jpg"
+    alt="Windmills Mobile"
+    className="absolute inset-0 w-full h-full object-cover md:hidden"
+  />
 
-          <div className="overlay text absolute text-white top-50 px-10">
+  {/* Desktop Image */}
+  <img
+    src="https://cms.fableco.uk/wp-content/uploads/2025/09/FableCo-Header-Windmills.jpg"
+    alt="Windmills Desktop"
+    className="absolute inset-0 w-full h-full object-cover hidden md:block"
+  />
+
+          <div className="overlay text absolute text-white top-30 md:top-50 px-10">
             <h1 className="uppercase">
               London Based Strategic Branding, <br /> Identity and Web Design Agency
             </h1>
-            <h1 className="pt-60 text-6xl font-light">
+            <h1 className="pt-60 text-2xl sm:text-4xl md:text-6xl font-light">
               Advancing progress and future-proofing your <br />
               business for tomorrow’s world of opportunity.
             </h1>
@@ -65,7 +75,25 @@ export default function HomePage() {
         </section>
 
         <section>
-          <video className="mb-25" autoPlay loop muted src="https://cms.fableco.uk/wp-content/uploads/2025/08/FABLECO_SHOWREEL-Small.mp4"></video>
+           {/* Mobile Video */}
+  <video
+    className="w-full h-auto mb-10 sm:mb-16 md:hidden"
+    autoPlay
+    loop
+    muted
+    playsInline
+    src="https://cms.fableco.uk/wp-content/uploads/2025/09/FABLECO_SHOWREEL_1x1-Small.mp4"
+  ></video>
+
+  {/* Desktop / Tablet Video */}
+  <video
+    className="w-full h-auto mb-10 sm:mb-16 md:mb-25 hidden md:block"
+    autoPlay
+    loop
+    muted
+    playsInline
+    src="https://cms.fableco.uk/wp-content/uploads/2025/08/FABLECO_SHOWREEL-Small.mp4"
+  ></video>
         </section>
 
         <section>

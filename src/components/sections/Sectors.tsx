@@ -11,33 +11,40 @@ export default function Sectors() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const trackRef = useRef<HTMLDivElement>(null)
 
-  useLayoutEffect(() => {
-    const section = sectionRef.current
-    const track = trackRef.current
-    if (!section || !track) return
+ useLayoutEffect(() => {
+  const section = sectionRef.current
+  const track = trackRef.current
+  if (!section || !track) return
 
-    const ctx = gsap.context(() => {
-      const scrollAmount = track.scrollWidth - window.innerWidth
+  const mm = gsap.matchMedia()
 
-      gsap.to(track, {
-        x: -scrollAmount,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",          // section fully visible
-          end: `+=${scrollAmount}`,     // horizontal distance
-          scrub: 1,
-          pin: section,                 // 🔑 pin EVERYTHING in this section
-          pinSpacing: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-          // markers: true, // enable only for debugging
-        },
-      })
-    }, section)
+  mm.add("(min-width: 768px)", () => {
+    const scrollAmount = track.scrollWidth - window.innerWidth
 
-    return () => ctx.revert()
-  }, [])
+    const animation = gsap.to(track, {
+      x: -scrollAmount,
+      ease: "none",
+      scrollTrigger: {
+        trigger: section,
+        start: "top top",
+        end: `+=${scrollAmount}`,
+        scrub: 1,
+        pin: section,
+        pinSpacing: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+      },
+    })
+
+    return () => {
+      animation.scrollTrigger?.kill()
+      animation.kill()
+    }
+  })
+
+  return () => mm.revert()
+}, [])
+
 
   return (
     <section
@@ -45,7 +52,10 @@ export default function Sectors() {
       className="relative bg-[#1c1c1c] text-white"
     >
       {/* INTRO / TEXT — THIS WILL NOW PIN */}
-      <div className=" py-20 flex gap-110 border-t border-white mx-10">
+      <div className=" py-12 md:py-20 
+flex flex-col md:flex-row 
+gap-6 md:gap-110 
+mx-4 md:mx-10 border-t border-white">
         <h2 className="uppercase">
           Areas of Focus
         </h2>

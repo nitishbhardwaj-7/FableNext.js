@@ -15,7 +15,7 @@ export function initLenis() {
     lerp: 0.08,
   })
 
-  // 🔥 THIS IS CRITICAL
+  
   lenis.on("scroll", ScrollTrigger.update)
 
   gsap.ticker.add((time) => {

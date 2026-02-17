@@ -23,10 +23,10 @@ craft something significant together.
 
         <div className="flex gap-100">
 
-             {/* Columns */}
+           
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 w-fit">
 
-          {/* Studio */}
+          
           <div>
             <h3 className="mb-4 uppercase text-gray-300">The Studio</h3>
             <p className="text-white/70">
@@ -40,7 +40,7 @@ craft something significant together.
             </Link>
           </div>
 
-          {/* London */}
+          
           <div>
             <h3 className="mb-4 uppercase text-gray-300">London Office</h3>
             <p className="text-white/70">
@@ -54,7 +54,7 @@ craft something significant together.
             </Link>
           </div>
 
-          {/* Contact */}
+          
           <div>
             <h3 className="mb-4 uppercase text-gray-300">Contact</h3>
             <p className="text-white/70">
@@ -67,7 +67,7 @@ craft something significant together.
             </Link>
           </div>
 
-          {/* Social */}
+          
           <div>
             <h3 className="mb-4 uppercase text-gray-300">Connect</h3>
             <ul className="space-y-2 text-white/70">
@@ -83,7 +83,7 @@ craft something significant together.
         </div>
 
         <div>
-             {/* Contact form */}
+             
           <div className="md:col-span-2">
             <h2 className="text-xl mb-8 uppercase text-gray-300">Get in Touch</h2>
 
@@ -130,10 +130,10 @@ craft something significant together.
 
         </div>
 
-        {/* Divider */}
+        
         <div className="border-t border-white/20 my-20" />
 
-        {/* Footer bar */}
+       
         <div className="flex flex-col md:flex-row justify-between gap-10 text-sm text-white/70">
           <Link href="/privacy-cookies-policy">
             Privacy / Cookies Policy
@@ -148,7 +148,7 @@ craft something significant together.
           </ul>
         </div>
 
-        {/* Bottom */}
+        
         <div className="mt-16 flex flex-col md:flex-row justify-between gap-6 text-xs text-white/50">
           <p>
             Fable&Co. Limited VAT Reg No. 198 5114 77 · Company Reg No. GB 09280304

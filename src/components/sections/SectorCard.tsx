@@ -10,7 +10,7 @@ export function SectorCard({ title, secondtitle, video, description }: Props) {
   return (
     <a
       href="#"
-      className="w-170 shrink-0 group"
+      className="w-[85vw] sm:w-[70vw] md:w-170 shrink-0 group"
     >
       <figure className="relative aspect-video overflow-hidden">
         <video
@@ -24,14 +24,14 @@ export function SectorCard({ title, secondtitle, video, description }: Props) {
         />
       </figure>
 
-      <h3 className="mt-12 text-3xl font-light leading-tight text-white">
+      <h3 className="mt-6 md:mt-12 text-xl sm:text-2xl md:text-3xl font-light leading-tight text-white">
         {title}
       </h3>
-      <h3 className="text-3xl font-light leading-tight text-white">
+      <h3 className="md:mt-12 text-xl sm:text-2xl md:text-3xl font-light leading-tight text-white">
         {secondtitle}
       </h3>
 
-      <p className="mt-6 text-xl text-white/80">
+      <p className="mt-4 md:mt-6 text-base sm:text-lg md:text-xl text-white/80">
         {description}
       </p>
     </a>
