@@ -4,6 +4,7 @@ type TextLinkProps = {
   href: string
   children: React.ReactNode
   className?: string
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
 export default function TextLink({
