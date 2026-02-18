@@ -16,28 +16,45 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function HomePage() {
 
-   useLayoutEffect(() => {
-  const ctx = gsap.context(() => {
-    const whiteSection = document.querySelector(".white-section")
-    if (!whiteSection) return
+  useLayoutEffect(() => {
 
-    gsap.to(whiteSection, {
-      yPercent: -100,
-      ease: "none",
-      scrollTrigger: {
-        trigger: whiteSection,
-        start: "top top",
-        end: "+=100%",
-        scrub: true,
-        pin: true,
-        pinSpacing: false,
-      },
+    const ctx = gsap.context(() => {
+
+      ScrollTrigger.matchMedia({
+
+        // Desktop only
+        "(min-width: 768px)": function () {
+
+          const whiteSection = document.querySelector(".white-section")
+          if (!whiteSection) return
+
+          gsap.to(whiteSection, {
+            yPercent: -100,
+            ease: "none",
+            scrollTrigger: {
+              trigger: whiteSection,
+              start: "top top",
+              end: "+=100%",
+              scrub: true,
+              pin: true,
+              pinSpacing: false,
+            },
+          })
+
+        },
+
+        // Mobile → do nothing (disabled)
+        "(max-width: 767px)": function () {
+          // No animation
+        }
+
+      })
+
     })
-  })
 
-  return () => ctx.revert()
-}, [])
+    return () => ctx.revert()
 
+  }, [])
 
   return (
     <>
@@ -47,14 +64,14 @@ export default function HomePage() {
         </header>
 
         <section className="relative min-h-[70vh]">
-           {/* Mobile Image */}
+        
   <img
     src="https://cms.fableco.uk/wp-content/uploads/2025/09/FableCo-Mobile-Header-Windmill-1.jpg"
     alt="Windmills Mobile"
     className="absolute inset-0 w-full h-full object-cover md:hidden"
   />
 
-  {/* Desktop Image */}
+ 
   <img
     src="https://cms.fableco.uk/wp-content/uploads/2025/09/FableCo-Header-Windmills.jpg"
     alt="Windmills Desktop"
@@ -65,7 +82,7 @@ export default function HomePage() {
             <h1 className="uppercase">
               London Based Strategic Branding, <br /> Identity and Web Design Agency
             </h1>
-            <h1 className="pt-60 text-2xl sm:text-4xl md:text-6xl font-light">
+            <h1 className="pt-40 text-2xl sm:text-4xl md:text-6xl md:pt-60 font-light">
               Advancing progress and future-proofing your <br />
               business for tomorrow’s world of opportunity.
             </h1>
@@ -75,7 +92,7 @@ export default function HomePage() {
         </section>
 
         <section>
-           {/* Mobile Video */}
+           
   <video
     className="w-full h-auto mb-10 sm:mb-16 md:hidden"
     autoPlay

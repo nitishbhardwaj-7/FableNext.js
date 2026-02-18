@@ -14,7 +14,7 @@ export default function Footer() {
 
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-100">
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-20 w-full lg:w-fit">
+          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-20 w-full lg:w-fit">
 
             <div>
               <h3 className="mb-4 uppercase text-gray-300">The Studio</h3>

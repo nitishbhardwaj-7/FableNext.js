@@ -7,10 +7,11 @@ export default function Contact (){
 
     <Header/>
 
-    <section className="px-10 py-28">
-        <div className="flex">
-            <h2 className="text-lg w-135 uppercase">CONTACT</h2>
-      <p className="text-2xl opacity-80 w-200">We collaborate with ambitious brands & enterprising people; we’d love to
+    <section className="px-6 sm:px-10 py-20 sm:py-24 lg:py-28">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-0">
+            <h2 className="text-lg w-full lg:w-135 uppercase">CONTACT</h2>
+      <p className="text-xl sm:text-2xl opacity-80 w-full lg:w-200">
+        We collaborate with ambitious brands & enterprising people; we’d love to
 craft something significant together.
       </p>
         </div>
@@ -19,12 +20,12 @@ craft something significant together.
     <section>
        <footer className="relative bg-transparent border-t border-white text-white overflow-hidden">
 
-      <div className="relative px-10 py-20">
+      <div className="relative px-6 sm:px-10 py-16 sm:py-20">
 
-        <div className="flex gap-100">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-100">
 
            
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 w-fit">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 w-full lg:w-fit">
 
           
           <div>
@@ -82,10 +83,12 @@ craft something significant together.
 
         </div>
 
-        <div>
+        <div className="w-full lg:w-auto">
              
           <div className="md:col-span-2">
-            <h2 className="text-xl mb-8 uppercase text-gray-300">Get in Touch</h2>
+            <h2 className="text-lg sm:text-xl mb-6 sm:mb-8 uppercase text-gray-300">
+              Get in Touch
+            </h2>
 
             <form className="space-y-6">
               <input
@@ -131,15 +134,15 @@ craft something significant together.
         </div>
 
         
-        <div className="border-t border-white/20 my-20" />
+        <div className="border-t border-white/20 my-12 sm:my-16 lg:my-20" />
 
        
-        <div className="flex flex-col md:flex-row justify-between gap-10 text-sm text-white/70">
+        <div className="flex flex-col md:flex-row justify-between gap-8 sm:gap-10 text-sm text-white/70">
           <Link href="/privacy-cookies-policy">
             Privacy / Cookies Policy
           </Link>
 
-          <ul className="flex gap-8">
+          <ul className="flex flex-wrap gap-6 sm:gap-8">
             <li><Link href="/portfolio">Work</Link></li>
             <li><Link href="/services">Services</Link></li>
             <li><Link href="/studio">Studio</Link></li>
@@ -149,7 +152,7 @@ craft something significant together.
         </div>
 
         
-        <div className="mt-16 flex flex-col md:flex-row justify-between gap-6 text-xs text-white/50">
+        <div className="mt-12 sm:mt-16 flex flex-col md:flex-row justify-between gap-6 text-xs text-white/50">
           <p>
             Fable&Co. Limited VAT Reg No. 198 5114 77 · Company Reg No. GB 09280304
           </p>

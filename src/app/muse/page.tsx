@@ -10,7 +10,7 @@ export default function MusePage() {
 
       <Header />
 
-      <div className="flex justify-between">
+      <div className="md:flex justify-between">
           <MuseHero />
 
 
