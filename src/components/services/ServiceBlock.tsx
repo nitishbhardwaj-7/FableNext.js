@@ -6,32 +6,24 @@ export default function ServiceBlock({ service }: any) {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section className="service-panel relative h-screen overflow-hidden border-t border-white/20 pt-20 min-h-[80vh]">
+    <section className="service-panel relative h-70 overflow-hidden bg-[#2f2f2f] border-t border-b border-white/20 pt-20 min-h-[80vh]">
       
       
-      <div
-        className="
-          absolute inset-0 -z-10 w-full
-          bg-[url('/images/services.jpg')]
-          bg-cover bg-center
-          animate-slow-pan
-        "
-      />
 
       
       <div className="absolute inset-0 bg-black/35 -z-10" />
 
       
-      <div className="relative z-10 flex justify-between px-10">
+      <div className="relative z-10 justify-between px-10 flex flex-col md:flex-row">
         <h2 className="text-4xl w-70 font-light mb-6">
           {service.title}
         </h2>
 
-        <p className="w-150 text-white/70 text-2xl mb-16">
+        <p className="w-150 text-white/70 hidden text-2xl md:block mb-16">
           {service.description}
         </p>
 
-        <div className="space-y-6 w-130">
+        <div className="space-y-6 w-130 mt-35 md:m-0">
           {service.items.map((item: any, i: number) => (
             <div key={i} className="border-b border-white/10 pb-6">
               <button
