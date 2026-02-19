@@ -135,7 +135,7 @@ export default function HomePage() {
           <ClientsLogos/>
           <Testimonials/>
         </section>
-        <section className="relative z-10 mt-[-740]">
+        <section className="relative z-10 mt-0 lg:-mt-185">
           <Footer/>
         </section>
       </main>
